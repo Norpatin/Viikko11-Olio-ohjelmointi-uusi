@@ -73,8 +73,8 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<Contact> work = new ArrayList<>();
         ArrayList<Contact> personal = new ArrayList<>();
 
-        work.clear();
-        personal.clear();
+        //work.clear();
+        //personal.clear();
 
         Iterator<Contact> iterator = ContactStorage.getInstance().getContacts().iterator();
         while(iterator.hasNext()){
@@ -86,6 +86,20 @@ public class MainActivity extends AppCompatActivity {
                 personal.add(group);
             }
         }
+
+        Collections.sort(personal, new Comparator<Contact>() {
+            @Override
+            public int compare(Contact o1, Contact o2) {
+                return o1.getFirstName().compareTo(o2.getFirstName());
+            }
+        });
+
+        Collections.sort(work, new Comparator<Contact>() {
+            @Override
+            public int compare(Contact o1, Contact o2) {
+                return o1.getFirstName().compareTo(o2.getFirstName());
+            }
+        });
 
         ContactStorage.getInstance().getContacts().clear();
         ContactStorage.getInstance().getContacts().addAll(work);
