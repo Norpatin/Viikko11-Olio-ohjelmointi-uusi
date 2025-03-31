@@ -23,8 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private ContactListAdapter contactListAdapter;
     ArrayList<String> workOrPersonal = new ArrayList<>();
-    ArrayList<Contact> work = new ArrayList<>();
-    ArrayList<Contact> personal = new ArrayList<>();
+
 
     //private ArrayList<String> firstNamesList = new ArrayList<>();;
     //private ContactListAdapter adapter; //LISÄTTY
@@ -71,6 +70,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void SortByGroup(View view){
+        ArrayList<Contact> work = new ArrayList<>();
+        ArrayList<Contact> personal = new ArrayList<>();
+
         work.clear();
         personal.clear();
 
