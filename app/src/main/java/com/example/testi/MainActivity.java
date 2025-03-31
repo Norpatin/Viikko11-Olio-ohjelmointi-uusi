@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
         Iterator<Contact> iterator = ContactStorage.getInstance().getContacts().iterator();
         while(iterator.hasNext()){
             Contact group = iterator.next();
-            if(group.getContactGroup().equals("Työt")){
+            if(group.getContactGroup().equals("Työ")){
                 work.add(group);
             }
             else{
@@ -100,10 +100,17 @@ public class MainActivity extends AppCompatActivity {
                 return o1.getFirstName().compareTo(o2.getFirstName());
             }
         });
+        ArrayList<Contact> sortedContacts = new ArrayList<>();
+        //ContactStorage.getInstance().getContacts().clear();
+        //ContactStorage.getInstance().getContacts().addAll(work);
+        //ContactStorage.getInstance().getContacts().addAll(personal);
 
-        ContactStorage.getInstance().getContacts().clear();
-        ContactStorage.getInstance().getContacts().addAll(work);
-        ContactStorage.getInstance().getContacts().addAll(personal);
+        sortedContacts.addAll(work);
+        sortedContacts.addAll(personal);
+
+        ContactStorage.getInstance().setContacts(sortedContacts);
+        contactListAdapter.setContacts(sortedContacts);
+        //contactListAdapter.setContacts(ContactStorage.getInstance().getContacts());
         contactListAdapter.notifyDataSetChanged();
     }
 

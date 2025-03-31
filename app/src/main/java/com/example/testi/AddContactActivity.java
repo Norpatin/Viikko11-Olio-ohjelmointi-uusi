@@ -42,7 +42,7 @@ public class AddContactActivity extends AppCompatActivity {
             ContactStorage.getInstance().addContact(new Contact(firstname.getText().toString(),lastname.getText().toString(), puhNumber.getText().toString(), "Henkilökohtainen"));
         }
         else if(testId == R.id.WorkRadioButton){
-            ContactStorage.getInstance().addContact(new Contact(firstname.getText().toString(),lastname.getText().toString(), puhNumber.getText().toString(), "Työt"));
+            ContactStorage.getInstance().addContact(new Contact(firstname.getText().toString(),lastname.getText().toString(), puhNumber.getText().toString(), "Työ"));
         }/**/
     }
 
