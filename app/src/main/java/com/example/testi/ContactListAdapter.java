@@ -59,10 +59,10 @@ public class ContactListAdapter  extends RecyclerView.Adapter<ContactViewHolder>
             }/**/
         };
 
-    public void setContacts(ArrayList<Contact> newContacts) {
+    /*public void setContacts(ArrayList<Contact> newContacts) {
         this.contacts = newContacts;
         notifyDataSetChanged();
-    }
+    }/**/
 
 
     @Override

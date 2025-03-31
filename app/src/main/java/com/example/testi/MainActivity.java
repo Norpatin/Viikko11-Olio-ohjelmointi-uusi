@@ -93,7 +93,10 @@ public class MainActivity extends AppCompatActivity {
                 return o1.getFirstName().compareTo(o2.getFirstName());
             }
         });
-
+        ContactStorage.getInstance().getContacts().clear();
+        ContactStorage.getInstance().getContacts().addAll(work);
+        ContactStorage.getInstance().getContacts().addAll(personal);
+        /*
         Collections.sort(work, new Comparator<Contact>() {
             @Override
             public int compare(Contact o1, Contact o2) {
@@ -111,7 +114,7 @@ public class MainActivity extends AppCompatActivity {
         ContactStorage.getInstance().setContacts(sortedContacts);
         contactListAdapter.setContacts(sortedContacts);
         //contactListAdapter.setContacts(ContactStorage.getInstance().getContacts());
-        contactListAdapter.notifyDataSetChanged();
+        contactListAdapter.notifyDataSetChanged();/**/
     }
 
     @Override

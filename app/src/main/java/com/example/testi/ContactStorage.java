@@ -50,7 +50,7 @@ public class ContactStorage {
         contacts.remove(i);
     }
 
-    public void setContacts(ArrayList<Contact> contacts) {
+    /*public void setContacts(ArrayList<Contact> contacts) {
         this.contacts.clear();
         this.contacts.addAll(contacts);
     }/**/
